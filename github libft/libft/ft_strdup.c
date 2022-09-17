@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 18:17:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/14 18:55:14 by iblanco-         ###   ########.fr       */
+/*   Created: 2022/09/16 17:56:33 by iblanco-          #+#    #+#             */
+/*   Updated: 2022/09/16 18:29:24 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	int				i;
-	unsigned char	*kstr;
+	char	*ret;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	kstr = (unsigned char *)str;
-	while (n > 0)
-	{
-		if (kstr[i] == (unsigned char)c)
-			return ((char *)&str[i]);
+	j = 0;
+	while (s[i] != '\0')
 		i++;
-		n--;
+	ret = ((char *) malloc((i + 1) * sizeof(char)));
+	if (ret == NULL)
+	{
+		return (0);
 	}
-	return (0);
+	while (j < i)
+	{
+		ret[j] = s[j];
+		j++;
+	}
+	ret[j] = '\0';
+	return (ret);
 }

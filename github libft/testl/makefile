@@ -6,7 +6,7 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 17:41:17 by iblanco-          #+#    #+#              #
-#    Updated: 2022/09/14 18:49:40 by iblanco-         ###   ########.fr        #
+#    Updated: 2022/09/16 17:56:17 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRCS = ft_memchr.c ft_memcmp.c
+SRCS = ft_strdup.c
 
 OBJS = $(SRCS:.c=.o)
 
