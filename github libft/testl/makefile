@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
+#    By: inigo <inigo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 17:41:17 by iblanco-          #+#    #+#              #
-#    Updated: 2022/09/16 17:56:17 by iblanco-         ###   ########.fr        #
+#    Updated: 2022/09/18 11:35:24 by inigo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRCS = ft_strdup.c
+SRCS = ft_strjoin.c ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 

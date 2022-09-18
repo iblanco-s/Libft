@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 16:33:29 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/18 11:35:15 by inigo            ###   ########.fr       */
+/*   Created: 2022/09/18 11:30:10 by inigo             #+#    #+#             */
+/*   Updated: 2022/09/18 11:32:36 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <unistd.h>
-# include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strlen(const char *a);
+{
+	char	*ret;
+	size_t	i;
+	size_t	j;
 
-#endif
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+		i++;
+	ret = ((char *) malloc((i + 1) * sizeof(char)));
+	if (ret == NULL)
+	{
+		return (0);
+	}
+	while (j < i)
+	{
+		ret[j] = s[j];
+		j++;
+	}
+	ret[j] = '\0';
+	return (ret);
+}

@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 16:33:29 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/18 11:35:15 by inigo            ###   ########.fr       */
+/*   Created: 2022/09/07 17:22:39 by iblanco-          #+#    #+#             */
+/*   Updated: 2022/09/12 17:53:26 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_strlen(const char *a)
+{
+	int	len;
 
-char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strlen(const char *a);
+	len = 0;
+	while (a[len] != '\0')
+		len++;
+	return (len);
+}
 
-#endif
+/*int main (void)
+{
+	char *a = "33 2";
+
+	printf ("%i\n",ft_strlen(a));
+	printf ("%lu",strlen(a));
+}*/
