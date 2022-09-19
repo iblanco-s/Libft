@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:33:29 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 18:32:29 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:03:48 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ void		*ft_memchr(const void *str, int c, size_t n);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_calloc(size_t nitems, size_t size);
 char		*ft_strdup(const char *s);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 #endif
