@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:22:49 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 17:54:19 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:11:58 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void		*mem;
-	size_t		i;
 
-	i = 0;
 	mem = malloc(nitems * size);
 	if (mem == NULL)
 		return (0);
