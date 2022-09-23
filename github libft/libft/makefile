@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: inigo <inigo@student.42.fr>                +#+  +:+       +#+         #
+#    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 17:41:17 by iblanco-          #+#    #+#              #
-#    Updated: 2022/09/20 18:38:31 by inigo            ###   ########.fr        #
+#    Updated: 2022/09/21 18:06:50 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRCS = ft_strlcat.c ft_strtrim.c ft_strdup.c ft_substr.c ft_strjoin.c ft_calloc.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_strchr.c ft_memmove.c ft_memcpy.c ft_bzero.c ft_memset.c ft_strnstr.c ft_strncmp.c ft_toupper.c ft_tolower.c  ft_strlen.c ft_strlcpy.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c ft_isalnum.c ft_atoi.c 
+SRCS = ft_strlcat.c ft_split.c ft_strtrim.c ft_strdup.c ft_substr.c ft_strjoin.c ft_calloc.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_strchr.c ft_memmove.c ft_memcpy.c ft_bzero.c ft_memset.c ft_strnstr.c ft_strncmp.c ft_toupper.c ft_tolower.c  ft_strlen.c ft_strlcpy.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c ft_isalnum.c ft_atoi.c 
 
 OBJS = $(SRCS:.c=.o)
 

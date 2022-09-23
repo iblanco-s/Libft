@@ -1,0 +1,197 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int ft_count(char const *s, char c)
+{
+    int    i;
+    int    j;
+    int    len;
+    int count;
+    char a = c;
+    
+    i = 0;
+    j = 0;
+    count = 0;
+    len = ft_strlen(s);
+    
+    if (s[0] && s[0] != a)
+        count++;
+    while (i < len)
+    {
+        while (i < len && a == s[i])
+          i++;
+        j = i;
+        while (i < len && a != s[i])
+            i++;    
+        if (i > j) 
+            count++;
+    }
+    return (count);
+}
+size_t    ft_strlcpy(char *dest, const char *src, size_t len)
+{
+    size_t    c;
+    size_t    k;
+
+    c = 0;
+    k = 0;
+    while (src[c] != '\0')
+        c++;
+    if (len > 0)
+    {
+        while (src[k] != '\0')
+        {
+            dest[k] = src[k];
+            k++;
+            if (k == len)
+            {
+                k--;
+                break ;
+            }
+        }
+        dest[k] = '\0';
+    }
+    return (c);
+}
+int    ft_strlen(const char *a)
+{
+    int    len;
+
+    len = 0;
+    while (a[len] != '\0')
+        len++;
+    return (len);
+}
+
+char **ft_split(char const *s, char c)
+{
+    int    i;
+    int    j;
+    int    len;
+    int istr;
+    int ik;
+    int sizem = 0;
+    char buffer[ft_strlen(s)];
+    char **strings;
+
+    
+    if (!s)
+        return (NULL);
+    strings = (char **)malloc((sizeof(char *) * (ft_count(s, c))));
+    if (strings == NULL)
+        return (0);
+    i = 0;
+    j = 0;
+    istr = 0;
+    ik = 0;
+    len = ft_strlen(s);
+    while (i < len)
+    {
+        while (i < len && c == s[i])
+          i++;
+        while (i < len && c != s[i])
+        {
+            buffer[j] = s[i];
+            i++;
+            j++;
+        }
+        if (j > 0)
+        {
+            buffer[j] = '\0';
+            sizem = ft_strlen(&buffer[ik]) + 1;
+            strings[istr] = malloc(sizeof(char) * (ft_strlen(&buffer[ik]) + 1));
+            if (strings[istr] == NULL)
+                return (0);
+            ft_strlcpy(strings[istr], &buffer[ik], ft_strlen(&buffer[ik]) + 1);
+            istr++;
+            ik = j;
+        }
+    }
+    strings[istr] = NULL;
+    return (strings);
+}
+
+int main (void)
+{
+  char const *s = "..h.o.l.fr.ar.g";
+  char c = 46;
+  ft_split(s, c);
+}
+
+int ft_count(char const *s, char c)
+{
+    int    i;
+    int    j;
+    int    len;
+    int count;
+    
+    i = 0;
+    j = 0;
+    count = 0;
+    len = ft_strlen(s);
+    
+    // if (s[0] && s[0] != c)
+    //     count++;
+    while (i < len)
+    {
+		j = i;
+        while (i < len &&  c == s[i])
+          i++;
+        j = i;
+        while (i < len && c != s[i])
+            i++;    
+        if (i > j) 
+            count++;
+    }
+    return (count);
+}
+
+char **ft_split(char const *s, char c)
+{
+    int    i;
+    int    j;
+    int    len;
+    int istr;
+    int ik;
+    int sizem = 0;
+    char buffer[ft_strlen(s) + 3];
+    char **strings;
+
+    
+    if (!s)
+        return (NULL);
+    strings = (char **)malloc((sizeof(char *) * (ft_count(s, c) + 1)));
+    if (strings == NULL)
+        return (0);
+    i = 0;
+    j = 0;
+    istr = 0;
+    ik = 0;
+    len = ft_strlen(s);
+    while (i < len)
+    {
+        while (i < len && c == s[i])
+          i++;
+        while (i < len && c != s[i])
+        {
+            buffer[j] = s[i];
+            i++;
+            j++;
+        }
+        if (j > 0 && istr < (ft_count(s, c)))
+        {
+            buffer[j] = '\0';
+            sizem = ft_strlen(&buffer[ik]) + 1;
+            strings[istr] = malloc(sizeof(char) * (ft_strlen(&buffer[ik]) + 1));
+            if (strings[istr] == NULL)
+                return (0);
+            ft_strlcpy(strings[istr], &buffer[ik], ft_strlen(&buffer[ik]) + 1);
+            istr++;
+            ik = j;
+        }
+    }
+    strings[istr] = NULL;
+    return (strings);
+}
