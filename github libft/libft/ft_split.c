@@ -6,26 +6,11 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:35:42 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/23 20:15:51 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:11:59 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
 
 int	ft_count(char const *s, char c)
 {
@@ -51,29 +36,27 @@ int	ft_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_copy(char **strings, char *buffer, char c, char const *s)
+char	**ft_copy(char **strings, char *tmp, char c, char const *s)
 {
 	int	i[4];
-	int	len;
 
 	i[0] = 0;
 	i[1] = 0;
 	i[2] = 0;
 	i[3] = 0;
-	len = ft_strlen(s);
-	while (i[0] < len)
+	while (i[0] < ft_strlen(s))
 	{
-		while (i[0] < len && c == s[i[0]])
+		while (i[0] < ft_strlen(s) && c == s[i[0]])
 			i[0]++;
-		while (i[0] < len && c != s[i[0]])
-			buffer[i[1]++] = s[i[0]++];
+		while (i[0] < ft_strlen(s) && c != s[i[0]])
+			tmp[i[1]++] = s[i[0]++];
 		if (i[1] > 0 && i[2] < (ft_count(s, c)))
 		{
-			buffer[i[1]] = '\0';
-			strings[i[2]] = malloc(1 * (ft_strlen(&buffer[i[3]]) + 1));
+			tmp[i[1]] = '\0';
+			strings[i[2]] = malloc(sizeof(char) * (ft_strlen(&tmp[i[3]]) + 1));
 			if (strings[i[2]] == NULL)
 				return (0);
-			ft_strcpy(strings[i[2]], &buffer[i[3]]);
+			ft_strlcpy(strings[i[2]], &tmp[i[3]], ft_strlen(&tmp[i[3]]) + 1);
 			i[2]++;
 			i[3] = i[1];
 		}
@@ -84,14 +67,16 @@ char	**ft_copy(char **strings, char *buffer, char c, char const *s)
 
 char	**ft_split(char const *s, char c)
 {
-	char buffer[ft_strlen(s) + 3];
+	char	*tmp;
 	char	**strings;
 
-	// buffer = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	tmp = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!s)
 		return (NULL);
 	strings = (char **)malloc((sizeof(char *) * (ft_count(s, c) + 1)));
 	if (strings == NULL)
 		return (0);
-	return (ft_copy(strings, buffer, c, s));
+	ft_copy(strings, tmp, c, s);
+	free(tmp);
+	return (strings);
 }
