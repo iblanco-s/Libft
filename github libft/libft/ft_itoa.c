@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 12:19:10 by inigo             #+#    #+#             */
-/*   Updated: 2022/09/25 18:35:22 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:28:29 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_min_int(char *str)
 	return (str);
 }
 
-char	*ft_putnbr(int n, char *str, int *inum)
+static char	*ft_putnbr(int n, char *str, int *inum)
 {
 	if (n >= 10)
 	{
@@ -36,7 +36,7 @@ char	*ft_putnbr(int n, char *str, int *inum)
 	return (str);
 }
 
-int	ft_count2(int n)
+static int	ft_count2(int n)
 {
 	int	i;
 	int	count;

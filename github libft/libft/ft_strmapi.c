@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 19:01:46 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/25 19:36:56 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:43:39 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	len = ft_strlen(s);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (NULL);
 	while (i < len)
 	{
-		(*f)(i, s[i]);
+		ret[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return(s);
+	ret[i] = '\0';
+	return (ret);
 }

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 17:22:39 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/26 17:39:24 by iblanco-         ###   ########.fr       */
+/*   Created: 2022/09/26 18:18:27 by iblanco-          #+#    #+#             */
+/*   Updated: 2022/09/26 18:21:07 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *a)
+void	ft_putstr_fd(char *s, int fd)
 {
+	int	i;
 	int	len;
 
-	len = 0;
-	while (a[len] != '\0')
-		len++;
-	return (len);
+	i = 0;
+	len = ft_strlen(s);
+	while (i < len)
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
-
-/*int main (void)
-{
-	char *a = "33 2";
-
-	printf ("%i\n",ft_strlen(a));
-	printf ("%lu",strlen(a));
-}*/

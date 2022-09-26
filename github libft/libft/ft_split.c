@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:35:42 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/25 17:11:59 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:28:34 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	strings = (char **)malloc((sizeof(char *) * (ft_count(s, c) + 1)));
 	if (strings == NULL)
+	{
+		free(tmp);
 		return (0);
+	}
 	ft_copy(strings, tmp, c, s);
 	free(tmp);
 	return (strings);
