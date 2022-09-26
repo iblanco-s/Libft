@@ -6,7 +6,7 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 17:41:17 by iblanco-          #+#    #+#              #
-#    Updated: 2022/09/26 18:32:07 by iblanco-         ###   ########.fr        #
+#    Updated: 2022/09/26 19:36:17 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,18 +20,25 @@ SRCS = ft_strlcat.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.
 
 OBJS = $(SRCS:.c=.o)
 
+BONUS = ft_lstnew.c
+
+BONUS_OBJS = $(BONUS:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	
+bonus:	$(OBJS) $(BONUS_OBJS)
+			ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	$(RM) $(OBJS) 
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
 	$(RM) $(NAME)
 	
 re:	fclean $(NAME)
 
-.PHONY:	all clean fclean re 
+.PHONY:	all clean fclean re bonus
 
