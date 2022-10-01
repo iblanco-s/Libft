@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 19:36:33 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:02:14 by iblanco-         ###   ########.fr       */
+/*   Created: 2022/09/29 19:49:13 by iblanco-          #+#    #+#             */
+/*   Updated: 2022/09/29 19:52:19 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*head;
+	t_list	*temp;
 
-	head = (t_list *)malloc(sizeof(t_list));
-	if (!head)
-		return (0);
-	head -> content = content;
-	head -> next = NULL;
-	return (head);
+	while (lst)
+	{
+		temp = lst -> next;
+		(*f)(lst -> content);
+		lst = temp;
+	}
 }
