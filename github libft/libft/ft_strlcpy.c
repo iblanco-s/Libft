@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:24:14 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/18 11:31:05 by inigo            ###   ########.fr       */
+/*   Updated: 2022/10/03 16:29:50 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 {
-	size_t	c;
+	size_t	i;
 	size_t	k;
 
-	c = 0;
+	i = 0;
 	k = 0;
-	while (src[c] != '\0')
-		c++;
+	while (src[i] != '\0')
+		i++;
 	if (len > 0)
 	{
 		while (src[k] != '\0')
@@ -35,15 +35,5 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 		}
 		dest[k] = '\0';
 	}
-	return (c);
+	return (i);
 }
-
-/*int main (void)
-{
-	char * src = "33 2effes";
-	char dest[]= "holaadios";
-	int len = 5;
-
-	printf ("%d\n",ft_strlcpy(dest, src, len));
-	printf ("%lu",strlcpy(dest, src, len));
-} */

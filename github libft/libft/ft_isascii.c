@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:15:31 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/12 17:31:32 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:23:07 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,3 @@ int	ft_isascii(int a)
 	else
 		return (0);
 }
-
-/*int	main (void)
-{
-	char a;
-
-	a = '2';
-	printf ("%i\n",ft_isascii(a));
-	printf ("%i",isascii(a));
-	
-}*/

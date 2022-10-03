@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:18:56 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/12 16:31:41 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:22:39 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,3 @@ int	ft_isalnum(char a)
 	else
 		return (0);
 }
-
-/*int main (void)
-{
-	char a;
-
-	a = '?';
-	printf ("%i\n",ft_isalnum(a));
-	printf ("%i",isalnum(a));
-}*/

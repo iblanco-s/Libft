@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:20:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:22:51 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:44:00 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst != NULL)
+	while (lst)
 	{
 		lst = lst -> next;
 		i++;

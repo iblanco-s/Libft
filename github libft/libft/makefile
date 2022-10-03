@@ -6,7 +6,7 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 17:41:17 by iblanco-          #+#    #+#              #
-#    Updated: 2022/09/29 19:54:32 by iblanco-         ###   ########.fr        #
+#    Updated: 2022/10/03 16:55:19 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	
 bonus:	$(OBJS) $(BONUS_OBJS)
-			ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)

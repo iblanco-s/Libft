@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:35:09 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/12 16:31:13 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:28:27 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,3 @@ int	ft_toupper(int ch)
 	else
 		return (ch);
 }
-
-/*int main()
-{
-    int j = 0;
-    char str[] = "GeEks@123\n";
-    char ch;
- 
-    while (str[j]) {
-        ch = str[j];
-        putchar(toupper(ch));
-		printf("\n");
-		putchar(toupper(ch));
-		printf("\n");
-        j++;
-    }
- 
-    return 0;
-}*/

@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:35:42 by iblanco-          #+#    #+#             */
-/*   Updated: 2022/09/26 16:28:34 by iblanco-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:39:31 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_copy(char **strings, char *tmp, char c, char const *s)
+char	**ft_copy(char **strings, char *temp, char c, char const *s)
 {
 	int	i[4];
 
@@ -49,14 +49,14 @@ char	**ft_copy(char **strings, char *tmp, char c, char const *s)
 		while (i[0] < ft_strlen(s) && c == s[i[0]])
 			i[0]++;
 		while (i[0] < ft_strlen(s) && c != s[i[0]])
-			tmp[i[1]++] = s[i[0]++];
+			temp[i[1]++] = s[i[0]++];
 		if (i[1] > 0 && i[2] < (ft_count(s, c)))
 		{
-			tmp[i[1]] = '\0';
-			strings[i[2]] = malloc(sizeof(char) * (ft_strlen(&tmp[i[3]]) + 1));
-			if (strings[i[2]] == NULL)
+			temp[i[1]] = '\0';
+			strings[i[2]] = malloc(sizeof(char) * (ft_strlen(&temp[i[3]]) + 1));
+			if (!strings[i[2]])
 				return (0);
-			ft_strlcpy(strings[i[2]], &tmp[i[3]], ft_strlen(&tmp[i[3]]) + 1);
+			ft_strlcpy(strings[i[2]], &temp[i[3]], ft_strlen(&temp[i[3]]) + 1);
 			i[2]++;
 			i[3] = i[1];
 		}
@@ -67,19 +67,19 @@ char	**ft_copy(char **strings, char *tmp, char c, char const *s)
 
 char	**ft_split(char const *s, char c)
 {
-	char	*tmp;
+	char	*temp;
 	char	**strings;
 
-	tmp = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	temp = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!s)
 		return (NULL);
 	strings = (char **)malloc((sizeof(char *) * (ft_count(s, c) + 1)));
-	if (strings == NULL)
+	if (!strings)
 	{
-		free(tmp);
+		free(temp);
 		return (0);
 	}
-	ft_copy(strings, tmp, c, s);
-	free(tmp);
+	ft_copy(strings, temp, c, s);
+	free(temp);
 	return (strings);
 }
