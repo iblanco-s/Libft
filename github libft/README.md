@@ -1,2 +1,2 @@
 # Libft
-Libft test to work from home
+First project made in 42 Urduliz.
