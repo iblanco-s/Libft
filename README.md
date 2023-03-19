@@ -16,24 +16,3 @@ Puedes descargar y utilizar estas funciones en tus propios proyectos. Simplement
   cd 42-libft
   make
 ```
-
-
-# 🚀 Welcome to my first project at 42.
-
-This project consists of recreating some standard C library functions to improve my understanding of data structures and basic algorithms. 💻
-
-🤔 At 42, the use of certain standard libraries is not allowed, making this task even more interesting by having to develop my own functions. 
-
-## 🎉 Objectives
-- Understand how some standard functions of the C library work
-- Improve C programming skills
-- Learn more about data structures and basic algorithms
-
-## 🧰 Usage Instructions
-You can download and use these functions in your own projects. Simply clone this repository and compile the libft.a file.
-
-```bash
-  git clone https://github.com/tu-usuario/42-libft.git
-  cd 42-libft
-  make
-```
